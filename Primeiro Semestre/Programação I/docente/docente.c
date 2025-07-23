@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>  // Para a função toupper
 
-// REQUISITO: Estruturas e arranjos
+// Estruturas e arranjos
 #define MAX_ALUNOS 50
 #define MAX_NOME 100
 #define NOME_ARQUIVO_TURMA_MAX 110
@@ -26,7 +26,7 @@ typedef struct {
     int total_alunos;
 } Turma;
 
-// --- Protótipos das Funções ---
+// --- Protótipos das Funções
 // Funções que NÃO interagem com o usuário
 void calcularMediaESituacao(Aluno *aluno);
 int carregarTurma(Turma *turma, const char *nomeArquivo);
@@ -62,7 +62,7 @@ int main()
         // Uso de fluxo de decisão para o controle da navegação do menu do professor
         switch (opcaoPrincipal) {
             case 1:  // Selecionar/Criar Turma
-                printf("\nDigite o nome da turma (ex: Ciencia_da_Computacao_2025): ");
+                printf("\nDigite o nome da turma (ex: ProgramaçãoI): ");
                 scanf("%99[^\n]", nomeTurma);
                 limparBufferEntrada();
 
@@ -175,7 +175,7 @@ int main()
     return 0;
 }
 
-// REQUISITO: Funções e Ponteiros
+// Funções e Ponteiros
 // Esta função recebe um ponteiro para um Aluno e altera seus campos de média e situação.
 void calcularMediaESituacao(Aluno *aluno)
 {
@@ -201,7 +201,7 @@ void formatarNomeArquivo(const char *nomeBase, char *nomeFormatado)
     strcat(nomeFormatado, ".txt");
 }
 
-// REQUISITO: Manipulação de arquivos (Leitura)
+// Manipulação de arquivos (Leitura)
 // Tenta carregar os dados de uma turma de um arquivo para a memória.
 int carregarTurma(Turma *turma, const char *nomeArquivo)
 {
@@ -231,7 +231,7 @@ int carregarTurma(Turma *turma, const char *nomeArquivo)
     return 1;  // Sucesso
 }
 
-// REQUISITO: Manipulação de arquivos (Gravação)
+// Manipulação de arquivos (Gravação)
 // Salva os dados da turma da memória para um arquivo de texto.
 void salvarTurma(const Turma *turma, const char *nomeArquivo)
 {
@@ -269,7 +269,7 @@ int adicionarAluno(Turma *turma, Aluno novoAluno)
     return 1;  // Sucesso
 }
 
-// Encontra o índice de um aluno no array pelo seu ID.
+// Encontra o índice de um aluno no arranjo pelo seu ID.
 int encontrarAlunoPorId(const Turma *turma, int id)
 {
     for (int i = 0; i < turma->total_alunos; i++) {
@@ -308,8 +308,8 @@ int excluirAluno(Turma *turma, int id)
     return 0;  // Aluno não encontrado
 }
 
-// --- Funções de Interface ---
-// REQUISITO: Interface iterativa via terminal
+// --- Funções de Interface
+//  Interface iterativa via terminal
 
 void exibirMenuPrincipal()
 {
