@@ -33,4 +33,4 @@ Exemplo: a turma `Ciencia da Computacao 2025` será salva como `Ciencia_da_Compu
 ### Compilação
 
 ```bash
-gcc -o gerenciador_turmas main.c
+gcc -o docente main.c
